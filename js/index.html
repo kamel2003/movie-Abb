@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Movie</title>
+</head>
+
+<body>
+
+    <div
+        class="loding-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center ">
+        <i class="fa fa-spinner fa-spin fa-5x"></i>
+    </div>
+
+    <!-- aSide Nave -->
+    <aside class="bg-white text-black d-flex">
+        <div class="sidbar bg-black d-flex flex-column justify-content-between">
+            <ul class=" links overflow-hidden fs-6 d-flex flex-column justify-content-around text-white">
+                <li onclick="getPlayingFilms('')" id="mainSearch" class="animation position-relative "><a href="#">Now
+                        Playing</a></li>
+                <li onclick="getpopularFilms('')" id="mainCategories" class="animation position-relative "><a
+                        href="#">Popular</a></li>
+                <li onclick="getTopRatedFilms('')" id="mainArea" class="animation position-relative "><a href="#">Top
+                        Rated</a></li>
+                <li onclick="getTrindingFilms('')" id="mainingredients" class="animation position-relative "><a
+                        href="#">Trending</a></li>
+                <li onclick="getUpCommingFilms('')" id="mainingredients" class="animation position-relative "><a
+                        href="#">UpComing</a></li>
+                <li id="ContactUs" class="animation position-relative "><a href="#">Contact us</a></li>
+            </ul>
+            <div class="icons text-white">
+                <i class="fab fa-facebook-f cursol"></i>
+                <i class="fab fa-twitter cursol"></i>
+                <i class="fa-solid fa-globe cursol"></i>
+                <p>Copyright Â© 2019 All
+                    Rights Reserved.</p>
+            </div>
+        </div>
+        <div class="mainSide d-flex flex-column justify-content-between py-3 bg-white">
+            <div class="logo text-center">
+                <img src="imgs/logo.png" alt="logo">
+            </div>
+            <div class="ferstTowIcons text-center">
+                <div class="open">
+                    <i class="fa-solid fa-bars fa-2x cursol"></i>
+                </div>
+                <div class="close d-none">
+                    <i class="fa-solid fa-xmark fa-2x cursol  myIcon"></i>
+                </div>
+            </div>
+
+            <div class="secondTowIcons d-flex flex-column gap-1">
+                <i class="fa-solid fa-globe cursol"></i>
+                <i class="fa-solid fa-share-nodes cursol"></i>
+            </div>
+        </div>
+    </aside>
+
+    <section>
+        <div class="container text-white py-5 text-center">
+
+            <div class="min-vh-100 position-relative">
+
+                <div
+                    class="ineer-loding-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center ">
+                    <i class="fa fa-spinner fa-spin fa-5x"></i>
+                </div>
+
+                <div class="input-group flex-nowrap w-50 mx-auto  mb-4 ">
+                    <input id="searchInput" onkeyup="searchFilms()" type="text" class="form-control rounded-5"
+                        placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <!-- Row Data -->
+                <div id="rowData" class="row g-4" >
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section id="contact" class="container text-white py-5">
+        <h2>Contact US</h2>
+        <form>
+            <div class="row mt-3 Mainform">
+                <div class="col-md-6">
+                    <input onkeyup="validateInput(this)" type="text" required="" id="name" maxlength="37"
+                        class="form-control mt-4" placeholder="Enter Your Name">
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Special characters and numbers not allowed
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input onkeyup="validateInput(this)" type="email" required="" id="email" class="form-control mt-4"
+                        placeholder="Enter Your Email">
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Email not valid *exemple@yyy.zzz
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input onkeyup="validateInput(this)" type="number" required="" id="phone" class="form-control mt-4"
+                        placeholder="Enter Your Phone">
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid Phone Number
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input onkeyup="validateInput(this)" type="number" required="" id="age" class="form-control mt-4"
+                        placeholder="Enter Your Age">
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid age ( 15 to 60 )
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <div class="d-flex align-items-center">
+                        <input onkeyup="validateInput(this)" onclick="eye()" type="password" required="" id="password"
+                            class="form-control mt-4" placeholder="Enter Your Password such (Password123) ">
+                        <i onclick="showPass()" id="passHid-icon" class="fa-solid fa-eye-slash d-none"></i>
+                        <i onclick="hidPass()" id="passShow-icon" class="fa-solid fa-eye d-none"></i>
+                    </div>
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Enter valid password such (Password123 , Tr0ub4d3! , S3cur3P@ss)
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <div class="d-flex align-items-center">
+                        <input onkeyup="validateInput(this)" onclick="eyeshow()" type="password" required=""
+                            id="Repassword" class="form-control mt-4" placeholder="ReEnter the Password">
+                        <i onclick="showRePass()" id="RepassHid-icon" class="fa-solid fa-eye-slash d-none"></i>
+                        <i onclick="hidRePass()" id="RepassShow-icon" class="fa-solid fa-eye d-none"></i>
+                    </div>
+                    <div class="alert alert-danger w-100 mt-2 d-none">
+                        Enter Same valid repassword
+                    </div>
+                </div>
+
+
+                <div class="col-md-12  mt-4">
+                    <button type="submit" class="btn btn-outline-dark p-2">Submit</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

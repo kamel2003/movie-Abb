@@ -1,0 +1,210 @@
+body {
+  background-color: #0D0D0D;
+  color: #f9f6f6 !important;
+  overflow: hidden;
+}
+
+.nav-tab {
+  background-color: #0D0D0D;
+}
+
+.logo img {
+  width: 50px;
+}
+
+i {
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+/* aside */
+aside {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0;
+  z-index: 99;
+}
+
+.mainSide {
+  width: 80px;
+  z-index: 99999;
+}
+
+.sidbar {
+  width: 0px;
+  padding: 0px;
+}
+
+.sidbar ul {
+  list-style: none;
+  height: 250px;
+  padding: 0;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.cursol {
+  cursor: pointer !important;
+  z-index: 555;
+}
+
+
+
+
+
+.rate {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(61, 255, 39, 0.918);
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  background-color: #070707ac;
+
+}
+
+.myImage {
+  transition: 0.5s;
+}
+
+
+.film:hover .overlay {
+  opacity: 1;
+}
+
+.film:hover .headerOfImg {
+  top: 0;
+}
+
+.film:hover .myImage {
+  transform: rotate(5deg) scale(1.1)
+}
+
+.headerOfImg {
+  position: relative;
+  top: -50%;
+  transition: 0.5s;
+}
+
+.paragraphOfImg {
+  position: relative;
+  right: 100%;
+  transition: 0.5s;
+}
+
+.film:hover .paragraphOfImg {
+  right: 0;
+}
+.film:hover .rate {
+  right: 0;
+}
+.rate{
+  position: relative;
+  right: 100%;
+  transition: 0.7s;
+}
+
+/* contact US */
+#contact .form-control {
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-color: #CED4DA;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    color: #fff;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.Mainform input::placeholder{
+  color:#ced4da !important;
+}
+
+/* .mainPass .fa-eye{
+  color: red;
+  left: 95%;
+  bottom: 10%;
+} */
+
+.btn{
+  background-color: #000;
+  color: #fff;
+}
+.btn:hover {
+  color:#000;
+  background-color: #fff;
+  border-color: var(--bs-btn-hover-border-color);
+}
+/* loding-screen */
+.loding-screen{
+  z-index: 999;
+  display: flex;
+}
+
+
+.ineer-loding-screen{
+  display: flex;
+  z-index: 9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.meal-layer{
+    width: 100%;
+    height: 100%;
+    background-color: #f9f6f6ca;
+    top: 100%;
+    transition: .5s;
+}
+
+.meal:hover .meal-layer{
+    top: 0;
+}
+
+.side-nav-menu{
+    z-index: 99;
+}
+
+ */
